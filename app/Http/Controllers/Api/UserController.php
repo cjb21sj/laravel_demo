@@ -30,7 +30,11 @@ class UserController extends BaseController
      * @return mixed
      */
     public function show(int $id) {
-
+event("");
         return $this->message($this->userService->getInfo($id));
+    }
+
+    public function test() {
+        return $this->message($this->userService->test());
     }
 }

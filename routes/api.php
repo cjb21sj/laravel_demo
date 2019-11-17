@@ -17,4 +17,5 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
+Route::get('user/test', 'Api\UserController@test');
 Route::resource('user', 'Api\UserController');

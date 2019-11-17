@@ -39,6 +39,7 @@ class User extends Command
      */
     public function handle()
     {
+        info('test');
         dd($this->userService->getInfo(1));
     }
 }

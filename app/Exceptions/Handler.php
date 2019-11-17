@@ -48,7 +48,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return $this->failed(400, $exception->getMessage());
+        if ('zhang' != env('APP_ENV')) {
+            return $this->failed(400, $exception->getMessage());
+        }
 
         return parent::render($request, $exception);
     }

@@ -9,14 +9,15 @@
 namespace App\Services\User;
 
 
-use App\User;
+use App\Models\Users;
+use Illuminate\Support\Facades\DB;
 
 class UserService implements UserServiceInterface
 {
 
     public function getList($page, $pageSize)
     {
-        return User::query()->paginate($pageSize);
+        return Users::query()->paginate($pageSize);
     }
 
     /**
@@ -25,6 +26,11 @@ class UserService implements UserServiceInterface
      */
     public function getInfo(int $id)
     {
-        return User::query()->find($id);
+        return Users::query()->find($id);
+    }
+
+    public  function test() {
+        //return 'test';
+//        DB::table('users')->
     }
 }
